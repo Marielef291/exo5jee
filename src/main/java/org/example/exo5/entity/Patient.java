@@ -19,7 +19,7 @@ import java.util.List;
 @Entity
 public class Patient {
     @Id
-    @GeneratedValue (strategy = GenerationType.TABLE)
+    @GeneratedValue
     @Column(name = "id_patient")
     private int id;
     private String firstName;

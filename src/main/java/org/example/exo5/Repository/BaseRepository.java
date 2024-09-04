@@ -17,11 +17,13 @@ public class BaseRepository <T>{
     }
 
     public T createOrUpdate(T entity) {
+        System.out.println("ici tout va bien");
         Session session = sessionFactory.openSession();
         try {
             session.beginTransaction();
             session.saveOrUpdate(entity);
             session.getTransaction().commit();
+
             return entity;
         } catch (HibernateException e) {
             session.getTransaction().rollback();
